@@ -14,20 +14,28 @@ const transactionSchema = mongoose.Schema({
         lowercase: true,
         validator: [validator.isEmail, "Plese provide a valid Email"]
     },
-    transactionId:{
+    transactionId: {
         type: String,
         trim: true,
         require: true,
         unique: [true, "Name must be Unique"],
     },
-    amount:{
+    status: {
+        type: String,
+        required: true,
+        enum: {
+            values: ["Deposit", "Withdrawal"],
+            massage: "status value can't be {VALUE},must be Deposit/withdrawal",
+        }
+    },
+    amount: {
         type: Number,
         require: true,
     }
 
-},{
+}, {
     timestamps: true
 })
 
-const Transaction=mongoose.model("Transaction",transactionSchema)
-module.exports=Transaction;
+const Transaction = mongoose.model("Transaction", transactionSchema)
+module.exports = Transaction;

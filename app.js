@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 app.use(express.json());
 app.use(cors());
 //routes
-// const studentRoute=require('./routes/student.route');
+const transactionRoute=require('./routes/transaction.route');
 
 
 app.get("/", (req, res) => {
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 // route colling
-// app.use("/api/v1",studentRoute)
+app.use("/api/v1",transactionRoute)
 
  
 
