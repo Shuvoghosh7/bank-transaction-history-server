@@ -3,8 +3,8 @@ const router=express.Router()
 
 const transactionConroller=require('../controller/transaction.Conroller')
 
-router.route('/student')
-// .get(studentConroller.getStudent)
+router.route('/transaction')
+.get(transactionConroller.getAllTransaction)
 .post(transactionConroller.createTransaction)
 
 

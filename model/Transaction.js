@@ -14,11 +14,9 @@ const transactionSchema = mongoose.Schema({
         lowercase: true,
         validator: [validator.isEmail, "Plese provide a valid Email"]
     },
-    transactionId: {
-        type: String,
-        trim: true,
-        require: true,
-        unique: [true, "Name must be Unique"],
+    transactionDate:{
+        type: Date,
+        default: Date.now  
     },
     status: {
         type: String,
@@ -33,8 +31,6 @@ const transactionSchema = mongoose.Schema({
         require: true,
     }
 
-}, {
-    timestamps: true
 })
 
 const Transaction = mongoose.model("Transaction", transactionSchema)

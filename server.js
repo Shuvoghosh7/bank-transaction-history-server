@@ -4,7 +4,7 @@ const colors = require("colors");
 
 const app = require("./app");
 // database connection by mongodb atlas
-mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.g8fwjcb.mongodb.net/?retryWrites=true&w=majority`).then(()=>{
+mongoose.connect(`mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.g8fwjcb.mongodb.net/bankTransaction`).then(()=>{
   console.log(`Database connect successfully`)
 });
 
